@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pedro.bahry\\Desktop\\treino c#\\MinhaAPI\\MinhaAPI.csproj": {}
+    "C:\\Users\\pedro.bahry\\Desktop\\treino c#\\gitprac\\MinhaAPI\\MinhaAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pedro.bahry\\Desktop\\treino c#\\MinhaAPI\\MinhaAPI.csproj": {
+    "C:\\Users\\pedro.bahry\\Desktop\\treino c#\\gitprac\\MinhaAPI\\MinhaAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pedro.bahry\\Desktop\\treino c#\\MinhaAPI\\MinhaAPI.csproj",
+        "projectUniqueName": "C:\\Users\\pedro.bahry\\Desktop\\treino c#\\gitprac\\MinhaAPI\\MinhaAPI.csproj",
         "projectName": "MinhaAPI",
-        "projectPath": "C:\\Users\\pedro.bahry\\Desktop\\treino c#\\MinhaAPI\\MinhaAPI.csproj",
+        "projectPath": "C:\\Users\\pedro.bahry\\Desktop\\treino c#\\gitprac\\MinhaAPI\\MinhaAPI.csproj",
         "packagesPath": "C:\\Users\\pedro.bahry\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pedro.bahry\\Desktop\\treino c#\\MinhaAPI\\obj\\",
+        "outputPath": "C:\\Users\\pedro.bahry\\Desktop\\treino c#\\gitprac\\MinhaAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pedro.bahry\\AppData\\Roaming\\NuGet\\NuGet.Config"

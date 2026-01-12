@@ -2,22 +2,28 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+// ==========================================
+// 1. CONFIGURAÇÃO DE SERVIÇOS (O que o app TEM)
+// ==========================================
 
+// IMPORTANTE: Adiciona suporte a Controllers e Views (CSHTML)
+builder.Services.AddControllersWithViews(); 
+
+builder.Services.AddOpenApi();
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
-        // Aqui definimos para onde o usuário vai se tentar acessar algo restrito sem estar logado
         options.LoginPath = "/Login/Index"; 
-        options.ExpireTimeSpan = TimeSpan.FromMinutes(60); // Opcional: Tempo que o login dura
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
     });
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// ==========================================
+// 2. CONFIGURAÇÃO DO PIPELINE (O que o app FAZ)
+// ==========================================
+
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
@@ -25,6 +31,16 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+// Necessário se você tiver arquivos CSS/JS na pasta wwwroot
+app.UseStaticFiles(); 
+
+// A ORDEM AQUI É CRÍTICA:
+app.UseAuthentication(); // 1º: Quem é você?
+app.UseAuthorization();  // 2º: Você pode entrar?
+
+// Mapeia os controllers para que as rotas (ex: /login) funcionem
+app.MapControllers(); 
+
+ 
 
 app.Run();
-

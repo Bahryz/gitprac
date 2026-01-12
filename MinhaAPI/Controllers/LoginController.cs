@@ -6,9 +6,9 @@ using System.Security.Claims;
 public class LoginController : Controller
 {
     [HttpPost("login")]
-    public async Task<IActionResult> Login([FromBody] User user)
+    public async Task<IActionResult> Login([FromForm] User user)
     {
-        // 1. Validação inicial: O pacote chegou inteiro? (Campos preenchidos, etc)
+        // 1. Validação inicial: O pacote chegou inteir"o? (Campos preenchidos, etc)
         if (!ModelState.IsValid)
         {
             return BadRequest(ModelState);
